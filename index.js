@@ -9,7 +9,7 @@ dotenv.config();
 const __dirname = path.resolve();
 
 // Get PORT from environment variables
-const { PORT } = process.env;
+const { PORT = 3000 } = process.env;
 
 // Create Express application
 const app = express();
