@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Define route for homepage
 app.get("/", (req, res) => {
-  res.render("pages/home");  // Render the 'index' view
+  res.render("pages/home", { title: "Home" });  // Render the 'index' view
 });
 
 // Start the server
