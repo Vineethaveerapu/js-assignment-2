@@ -1,4 +1,3 @@
-
 import express from "express";
 import dotenv from "dotenv";
 import path from "path";
@@ -14,17 +13,18 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-
 app.use(express.static(path.join(__dirname, "public")));
 
-
 app.get("/", (req, res) => {
-  res.render("pages/common", { title: "Home" , content: "Home"});
+  res.render("pages/home");
 });
-
 app.use("/about", aboutRouter);
 app.use("/contact", contactRouter);
 app.use("/services", servicesRouter);
+
+app.use((req, res) => {
+  res.status(404).render("pages/404");
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
