@@ -1,0 +1,15 @@
+<% if (typeof service !== 'undefined') { %>
+<div class="service-card">
+  <img src="<%= service.image %>" alt="<%= service.title %>" />
+  <h2><%= service.title %></h2>
+  <p><%= service.description %></p>
+  <% if (service.features && service.features.length > 0) { %>
+  <ul class="service-features">
+    <% service.features.forEach(feature => { %>
+    <li><%= feature %></li>
+    <% }); %>
+  </ul>
+  <% } %>
+  <a href="/services/<%= service.slug %>" class="service-link"> Read more </a>
+</div>
+<% } %>

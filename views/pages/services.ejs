@@ -5,59 +5,19 @@
     <%- include('../partials/header') %>
     <main class="services-page">
       <div class="services-hero">
-        <h1>Our Services</h1>
-        <p class="tagline">Comprehensive Event Planning Solutions</p>
+        <h1><%= locals.pageData.services.title %></h1>
+        <p class="tagline"><%= locals.pageData.services.tagline %></p>
+        <p class="description"><%= locals.pageData.services.description %></p>
       </div>
 
       <section class="services-grid">
-        <div class="service-card">
-          <img src="/images/wedding.jpg" alt="Wedding Planning" />
-          <h2>Wedding Planning</h2>
-          <p>
-            Make your special day perfect with our comprehensive wedding
-            planning services. From venue selection to the last dance, we handle
-            every detail.
-          </p>
-          <ul class="service-features">
-            <li>Venue Selection</li>
-            <li>Catering Coordination</li>
-            <li>Decor & Theme Design</li>
-            <li>Timeline Management</li>
-          </ul>
-          <a href="/contact" class="btn-primary">Get Quote</a>
-        </div>
-
-        <div class="service-card">
-          <img src="/images/corporate.jpg" alt="Corporate Events" />
-          <h2>Corporate Events</h2>
-          <p>
-            Professional event planning for conferences, seminars, team
-            building, corporate celebrations and product launches.
-          </p>
-          <ul class="service-features">
-            <li>Conference Planning</li>
-            <li>Team Building Events</li>
-            <li>Award Ceremonies</li>
-            <li>Product Launches</li>
-          </ul>
-          <a href="/contact" class="btn-primary">Get Quote</a>
-        </div>
-
-        <div class="service-card">
-          <img src="/images/birthday.jpg" alt="Birthday Celebrations" />
-          <h2>Birthday Celebrations</h2>
-          <p>
-            Create memorable birthday celebrations for all ages with our
-            creative and fun party planning services.
-          </p>
-          <ul class="service-features">
-            <li>Theme Development</li>
-            <li>Entertainment Booking</li>
-            <li>Cake & Catering</li>
-            <li>Decoration Setup</li>
-          </ul>
-          <a href="/contact" class="btn-primary">Get Quote</a>
-        </div>
+        <% if (locals.services && locals.services.length > 0) { %> <%
+        locals.services.forEach(service => { %>
+        <%- include('../partials/service-card', { service }) %>
+        <% }); %>
+        <% } else { %>
+        <p class="no-services">No services available at the moment.</p>
+        <% } %>
       </section>
     </main>
     <%- include('../partials/footer') %>

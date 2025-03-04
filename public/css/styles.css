@@ -135,10 +135,6 @@ main {
   transition: transform 0.3s ease;
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
-}
-
 .service-card img {
   width: 100%;
   height: auto;
@@ -153,39 +149,12 @@ main {
 
 .service-features li {
   margin-bottom: 0.5rem;
-  padding-left: 1.5rem;
   position: relative;
-}
-
-.service-features li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--primary-color);
 }
 
 /* Contact Page */
 .contact-page {
   padding: 1rem;
-}
-
-/* Buttons */
-.btn-primary {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--secondary-color);
-  color: var(--white);
-  border: none;
-  border-radius: var(--border-radius);
-  font-weight: 500;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-  text-align: center;
-}
-
-.btn-primary:hover {
-  background-color: var(--primary-color);
 }
 
 /* Footer */
