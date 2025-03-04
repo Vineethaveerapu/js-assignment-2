@@ -12,8 +12,6 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -22,6 +20,8 @@ body {
   color: var(--text-color);
   font-size: 16px;
   background-color: var(--light-gray);
+  margin: 0;
+  padding: 0;
 }
 
 /* Header Styles */
@@ -45,6 +45,7 @@ body {
   font-weight: 700;
   color: var(--primary-color);
   text-align: center;
+  text-decoration: none;
 }
 
 .nav-bar {
@@ -61,10 +62,15 @@ body {
 }
 
 .nav-bar a {
+  font-size: 1.2rem;
   text-decoration: none;
   color: var(--text-color);
   font-weight: 500;
   transition: color 0.3s ease;
+
+  &.active {
+    color: var(--primary-color);
+  }
 }
 
 .nav-bar a:hover {
@@ -142,11 +148,6 @@ main {
   margin-bottom: 1rem;
 }
 
-.service-features {
-  list-style: none;
-  margin: 1rem 0;
-}
-
 .service-features li {
   margin-bottom: 0.5rem;
   position: relative;
@@ -211,6 +212,7 @@ button:hover {
     flex-direction: row;
     justify-content: space-between;
     padding: 0 1rem;
+    margin: unset;
   }
 
   main {

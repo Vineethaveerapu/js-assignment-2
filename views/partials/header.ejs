@@ -1,9 +1,18 @@
 <header class="header">
-  <div class="site-title">Event Planner</div>
+  <a class="site-title" href="/">Event Planner</a>
   <nav class="nav-bar">
     <li><a href="/">Home</a></li>
+    <li><a href="/services">Services</a></li>
     <li><a href="/about">About</a></li>
     <li><a href="/contact">Contact</a></li>
-    <li><a href="/services">Services</a></li>
   </nav>
 </header>
+<script>
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  navLinks.forEach((link) => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('active');
+    }
+  });
+</script>

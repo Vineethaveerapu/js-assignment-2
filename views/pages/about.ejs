@@ -4,37 +4,30 @@
   <body>
     <%- include('../partials/header') %>
     <main class="about-page">
-      <div class="about-hero">
-        <h1>About Event Planner</h1>
-        <p>Creating Unforgettable Moments Since 2010</p>
-      </div>
-
+      <% if (isMain) { %>
+      <h1><%= pageData.about.title %></h1>
       <section>
-        <h2>Our Story</h2>
-        <p>
-          With over a decade of experience in event planning, we've built our
-          reputation on turning dreams into reality. Our passionate team of
-          event planners brings creativity, precision, and dedication to every
-          event we organize.
-        </p>
-
-        <div>
-          <h2>Why Choose Us?</h2>
-
-          <div>
-            <h3>Experience</h3>
-            <p>Over 100+ successful events</p>
-          </div>
-          <div>
-            <h3>Dedication</h3>
-            <p>Personalized attention to detail</p>
-          </div>
-          <div>
-            <h3>Reliability</h3>
-            <p>On-time and within budget</p>
-          </div>
-        </div>
+        <p><%= pageData.about.description %></p>
       </section>
+      <section>
+        <h2>Our Team</h2>
+        <ul>
+          <% aboutSubPages.forEach(subPage => { %>
+          <li>
+            <a href="/about/<%= subPage.slug %>"><%= subPage.title %></a>
+          </li>
+          <% }) %>
+        </ul>
+      </section>
+      <% } %>
+
+      <% if (!isMain && about) { %>
+      <h1><%= about.title %></h1>
+      <a href="/about">Back to About</a>
+      <section>
+        <p><%= about.description %></p>
+      </section>
+      <% } %>
     </main>
     <%- include('../partials/footer') %>
   </body>
