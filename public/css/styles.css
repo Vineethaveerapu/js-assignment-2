@@ -17,7 +17,7 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   color: var(--text-color);
   font-size: 16px;
@@ -150,6 +150,27 @@ main {
 .service-features li {
   margin-bottom: 0.5rem;
   position: relative;
+}
+
+.service-detail-page {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 0;
+  border-radius: var(--border-radius);
+}
+
+.service-hero-overlay {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  color: black;
+
+  @media (min-width: 768px) {
+    padding: 3rem;
+  }
 }
 
 /* Contact Page */
