@@ -173,6 +173,20 @@ main {
   }
 }
 
+button {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: var(--primary-color);
+}
+
 /* Contact Page */
 .contact-page {
   padding: 1rem;
